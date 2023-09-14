@@ -1,7 +1,15 @@
+@font-face {
+    font-family: "digital-7";
+        src: url("fonts/digital-7-mono.ttf");
+        src: url("fonts/digital-7-mono.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+
 body {
     box-sizing: border-box;
     background-color: #fce8ff;
-    font-family: sans-serif;
+    font-family: "poppins", sans-serif;
 }
 
 button {
@@ -44,8 +52,9 @@ button {
 }
 
 .display-container {
+    font-family: "digital-7", monospace;
     background-color: #141c11;
-    color: white;
+    color: black;
     width: 550px;
     flex: 1;
     /* border-radius: 8px; */
@@ -56,13 +65,20 @@ button {
 
 .subdisplay-container {
     background-color: #1a2615;
-    font-size: 48px;
+    color: white;
+    font-size: 80px;
     width: 500px;
     padding: 10px;
     height: 137px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.subdisplay-container p {
+    position: relative;
+    bottom: 12px;
+    right: 0.8rem;
 }
 
 .controls-container {

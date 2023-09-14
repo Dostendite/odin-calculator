@@ -14,7 +14,8 @@ button {
     border-radius: 25%;
 }
 
-#button-clear {
+#button-clear,
+#button-equals {
     background-color: #39aae3;
 }
 
@@ -55,7 +56,6 @@ button {
 
 .subdisplay-container {
     background-color: #1a2615;
-    /* border-radius: 4px; */
     font-size: 48px;
     width: 500px;
     padding: 10px;

@@ -2,35 +2,41 @@
 
 const displayPara = document.querySelector("#display-para");
 const buttons = document.querySelectorAll("button");
+const operatorButtons = document.querySelectorAll(".operator-button")
 const clearButton = document.querySelector("#button-clear");
 const equalsButton = document.querySelector("#button-equals");
 
-let displayContent = "";
+const operators = "+−×÷";
 
-buttons.forEach((button) => {
-    if (button.id === "button-clear") {
-        button.addEventListener(("click"), (e) => {
-            displayPara.textContent = "";
-            displayContent = "";
-        });
-    } else if (button.id === "button-equals") {
-        button.addEventListener(("click"), (e) => {
-            let result = operate(displayContent[0], displayContent[1], displayContent[2]);
-            displayPara.textContent = result;
-            displayContent += result;
-        })
-    } else {
-        button.addEventListener(("click"), (e) => {
-            displayPara.textContent += button.textContent;
-            displayContent += button.textContent;
-        });
-    }
+clearButton.addEventListener(("click") , (e) => {
+    displayPara.textContent = "";
 });
 
-// = C
-// + − × ÷ 
-// button-clear button-equals
+equalsButton.addEventListener(("click"), (e) => {
+    calculate();
+});
+
+buttons.forEach((button) => {
+        button.addEventListener(("click"), (e) => {
+            displayPara.textContent += +button.textContent;
+        });
+});
+
+
 // ~~~~~~~~ FUNCTIONS ~~~~~~~~
+
+function calculate() {
+    // loop through all the numbers & operators
+    // in displaycontent.textContent and
+    // if an operator is found, operate with
+    // the number behind & the one in front
+    // (until another operator is found)
+    // store the result in a variable which
+    // substitutes all the operate arguments
+
+    let currentResult = 0;
+    // for (let i = 0;)
+}
 
 function add(addendOne, addendTwo) {
     return addendOne + addendTwo;

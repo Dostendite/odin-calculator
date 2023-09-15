@@ -27,8 +27,12 @@ button {
     background-color: #39aae3;
 }
 
+#button-equals {
+    font-size: 72px;
+}
+
 .column-four button {
-    font-size: 64px;
+    font-size: 80px;
     background-color: #d539e3;
 }
 
@@ -52,7 +56,8 @@ button {
 }
 
 .display-container {
-    font-family: "digital-7", monospace;
+    /* need to fix font, it bugs out the display */
+    /* font-family: "digital-7", monospace; */
     background-color: #141c11;
     color: black;
     width: 550px;
@@ -66,7 +71,6 @@ button {
 .subdisplay-container {
     background-color: #1a2615;
     color: white;
-    font-size: 80px;
     width: 500px;
     padding: 10px;
     height: 137px;
@@ -75,10 +79,11 @@ button {
     align-items: center;
 }
 
-.subdisplay-container p {
-    position: relative;
-    bottom: 12px;
-    right: 0.8rem;
+#display-para {
+    font-size: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .controls-container {

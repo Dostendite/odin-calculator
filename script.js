@@ -1,5 +1,23 @@
-// Create basic math functions:
-// Add, subtract, multiply, divide
+
+
+const displayPara = document.querySelector("#display-para");
+const buttons = document.querySelectorAll("button");
+
+
+buttons.forEach((button) => {
+    if (button.id === "button-clear" || button.id === "button-equals") {
+        return;
+    } else {
+        button.addEventListener(("click"), (e) => {
+            displayPara.textContent += button.textContent;
+        });
+    }
+});
+
+// = C
+// + − × ÷ 
+// button-clear button-equals
+// ~~~~~~~~ FUNCTIONS ~~~~~~~~
 
 function add(addendOne, addendTwo) {
     return addendOne + addendTwo;
@@ -26,13 +44,13 @@ function operate(operandOne, operator, operandTwo) {
         case "+":
             return add(operandOne, operandTwo)
             break;
-        case "-":
+        case "−":
             return subtract(operandOne, operandTwo);
             break;
-        case "*":
+        case "×":
             return multiply(operandOne, operandTwo);
             break;
-        case "/":
+        case "÷":
             return divide(operandOne, operandTwo);
     }
 }

@@ -20,6 +20,22 @@ button {
     width: 115px;
     height: 115px;
     border-radius: 25%;
+    transition: color 1s;
+    transition: background-color 0.2s;
+}
+
+button:active {
+    position: relative;
+    top: 2px;
+}
+
+.number-button:hover {
+    background-color: #0f0f0f;
+}
+
+.operator-button:hover {
+    background-color: #8f0b9c;
+    color: white;
 }
 
 #button-clear,
@@ -29,6 +45,12 @@ button {
 
 #button-equals {
     font-size: 72px;
+}
+
+#button-clear:hover,
+#button-equals:hover {
+    background-color: #1978a8;
+    color: white;
 }
 
 .column-four button {

@@ -1,5 +1,4 @@
 
-
 const displayPara = document.querySelector("#display-para");
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button")
@@ -27,7 +26,6 @@ operatorButtons.forEach((button) => {
         displayPara.textContent += button.textContent;
     });
 });
-
 
 // ~~~~~~~~ FUNCTIONS ~~~~~~~~
 

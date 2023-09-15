@@ -62,7 +62,6 @@ button {
     color: black;
     width: 550px;
     flex: 1;
-    /* border-radius: 8px; */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -7,8 +7,8 @@
 **Stuff to do:**
 - Add decimal point button
 - Add backspace button
-- Fix custom font not displaying on github.io page
-- Make the calculator a bit smaller
+- Add keyboard support
 - Center the content inside the buttons
 - Add a footer on the calculator page with
-my name & GitHub (icon) w/ link
+  my name & my GitHub (w/ icon) link
+- Fix custom font not displaying on github.io page (Not that imperative)

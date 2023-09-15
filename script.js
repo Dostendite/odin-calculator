@@ -5,14 +5,17 @@ const operatorButtons = document.querySelectorAll(".operator-button")
 const clearButton = document.querySelector("#button-clear");
 const equalsButton = document.querySelector("#button-equals");
 
+let operatorActive = false;
+
 clearButton.addEventListener(("click") , (e) => {
     displayPara.textContent = "";
+    operatorActive = false;
 });
 
 equalsButton.addEventListener(("click"), (e) => {;
-
     let displayArray = displayPara.textContent.split(" ");
     displayPara.textContent = calculate(displayArray);
+    operatorActive = false;
 });
 
 numberButtons.forEach((button) => {
@@ -23,7 +26,20 @@ numberButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
     button.addEventListener(("click"), (e) => {
-        displayPara.textContent += button.textContent;
+
+        if (operatorActive === true) {
+            console.log(`Operator is active`);
+            let displayArray = displayPara.textContent.split(" ");
+            displayArray.concat(displayPara.textContent);
+            displayPara.textContent = calculate(displayArray);
+            displayPara.textContent += button.textContent;
+            operatorActive === true
+        } else {
+            console.log(`Operator is not active`);
+            displayPara.textContent += button.textContent;
+            operatorActive = true;
+
+        }
     });
 });
 
@@ -37,8 +53,6 @@ function calculate(displayArray) {
         result = operate(displayArray[0], displayArray[1], displayArray[2]);
         displayArray.splice(0, 3, result);
     }
-
-    console.log(`Calculated ${displayArray}`)
 
     return displayArray;
 }

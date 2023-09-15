@@ -6,6 +6,7 @@
 
 **Stuff to do:**
 - Add decimal point button
+- Add backspace button
 - Fix custom font not displaying on github.io page
 - Make the calculator a bit smaller
 - Center the content inside the buttons

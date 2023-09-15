@@ -14,7 +14,11 @@ buttons.forEach((button) => {
             displayContent = "";
         });
     } else if (button.id === "button-equals") {
-        return;
+        button.addEventListener(("click"), (e) => {
+            let result = operate(displayContent[0], displayContent[1], displayContent[2]);
+            displayPara.textContent = result;
+            displayContent += result;
+        })
     } else {
         button.addEventListener(("click"), (e) => {
             displayPara.textContent += button.textContent;
@@ -51,15 +55,15 @@ const operandTwo = 0;
 function operate(operandOne, operator, operandTwo) {
     switch (operator) {
         case "+":
-            return add(operandOne, operandTwo)
+            return add(+operandOne, +operandTwo)
             break;
         case "−":
-            return subtract(operandOne, operandTwo);
+            return subtract(+operandOne, +operandTwo);
             break;
         case "×":
-            return multiply(operandOne, operandTwo);
+            return multiply(+operandOne, +operandTwo);
             break;
         case "÷":
-            return divide(operandOne, operandTwo);
+            return divide(+operandOne, +operandTwo);
     }
 }

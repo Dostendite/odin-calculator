@@ -84,6 +84,8 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    word-spacing: -16px;
+    text-align: center;
 }
 
 .controls-container {

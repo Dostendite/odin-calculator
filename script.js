@@ -1,7 +1,7 @@
 
 
 const displayPara = document.querySelector("#display-para");
-const buttons = document.querySelectorAll("button");
+const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button")
 const clearButton = document.querySelector("#button-clear");
 const equalsButton = document.querySelector("#button-equals");
@@ -16,10 +16,16 @@ equalsButton.addEventListener(("click"), (e) => {
     calculate();
 });
 
-buttons.forEach((button) => {
-        button.addEventListener(("click"), (e) => {
-            displayPara.textContent += +button.textContent;
-        });
+numberButtons.forEach((button) => {
+    button.addEventListener(("click"), (e) => {
+        displayPara.textContent += +button.textContent;
+    });
+});
+
+operatorButtons.forEach((button) => {
+    button.addEventListener(("click"), (e) => {
+        displayPara.textContent += button.textContent;
+    });
 });
 
 
@@ -33,6 +39,8 @@ function calculate() {
     // (until another operator is found)
     // store the result in a variable which
     // substitutes all the operate arguments
+
+    // can find an operator if it's not a number
 
     let currentResult = 0;
     // for (let i = 0;)

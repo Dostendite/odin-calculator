@@ -2,14 +2,23 @@
 
 const displayPara = document.querySelector("#display-para");
 const buttons = document.querySelectorAll("button");
+const clearButton = document.querySelector("#button-clear");
+const equalsButton = document.querySelector("#button-equals");
 
+let displayContent = "";
 
 buttons.forEach((button) => {
-    if (button.id === "button-clear" || button.id === "button-equals") {
+    if (button.id === "button-clear") {
+        button.addEventListener(("click"), (e) => {
+            displayPara.textContent = "";
+            displayContent = "";
+        });
+    } else if (button.id === "button-equals") {
         return;
     } else {
         button.addEventListener(("click"), (e) => {
             displayPara.textContent += button.textContent;
+            displayContent += button.textContent;
         });
     }
 });

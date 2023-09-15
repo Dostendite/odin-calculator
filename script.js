@@ -74,6 +74,11 @@ function operate(operandOne, operator, operandTwo) {
             result = multiply(+operandOne, +operandTwo);
             break;
         case "÷":
+
+            if (+operandOne === 0 || +operandTwo === 0) {
+                return "DON'T";
+            }
+            
             result = divide(+operandOne, +operandTwo);
     }
 

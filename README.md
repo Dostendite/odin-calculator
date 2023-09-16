@@ -5,6 +5,8 @@
 👾 [**Live preview**](https://dostendite.github.io/odin-calculator/)
 
 **Stuff to do:**
+- Divide display into two sections, one for the last calculation and
+  the other for the result
 - Add decimal point button
 - Add backspace button
 - Add keyboard support

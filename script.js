@@ -28,14 +28,12 @@ operatorButtons.forEach((button) => {
     button.addEventListener(("click"), (e) => {
 
         if (operatorActive === true) {
-            console.log(`Operator is active`);
             let displayArray = displayPara.textContent.split(" ");
             displayArray.concat(displayPara.textContent);
             displayPara.textContent = calculate(displayArray);
             displayPara.textContent += button.textContent;
             operatorActive === true
         } else {
-            console.log(`Operator is not active`);
             displayPara.textContent += button.textContent;
             operatorActive = true;
 

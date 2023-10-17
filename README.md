@@ -4,6 +4,9 @@
 
 👾 [**Live preview**](https://dostendite.github.io/odin-calculator/)
 
+**Known bugs:**
+- Number becomes 0 when pressing multiply button repeatedly
+
 **Stuff to do:**
 - Divide display into two sections, one for the last calculation and
   the other for the result
@@ -14,6 +17,3 @@
   my name & my GitHub link (w/ icon)
 - Make the calculator a bit smaller
 - Fix custom font not displaying on github.io page
-
-**Known bugs:**
-- Number becomes 0 when pressing multiply button repeatedly

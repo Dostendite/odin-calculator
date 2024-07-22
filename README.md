@@ -4,9 +4,6 @@
 
 👾 [**Live preview**](https://dostendite.github.io/odin-calculator/)
 
-**Known bugs:**
-- Number becomes 0 when pressing multiply button repeatedly
-
 **Possible improvements:**
 - Add decimal point button
 - Add backspace button

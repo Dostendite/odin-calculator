@@ -7,9 +7,7 @@
 **Known bugs:**
 - Number becomes 0 when pressing multiply button repeatedly
 
-**Stuff to do:**
-- Divide display into two sections, one for the last calculation and
-  the other for the result
+**Possible improvements:**
 - Add decimal point button
 - Add backspace button
 - Add keyboard support

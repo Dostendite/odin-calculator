@@ -30,6 +30,8 @@ function addNumber(number) {
 
 function addOperator(operator) {
     if (operatorActive === true) {
+        if (isOperator(displayPara.textContent.slice(-1))) return;
+
         evaluate();
         displayPara.textContent += operator;
         operatorActive = true;
@@ -43,13 +45,22 @@ function isOperator(symbol) {
     return operators.includes(symbol.trim());
 }
 
+function restoreFirstDigit() {
+    displayPara.textContent = displayPara.textContent.split(" ")[0];
+    operatorActive = false;
+}
+
 function evaluate() {
     let evaluationData = displayPara.textContent.split(" ");
+    if (evaluationData.length > 3 && isOperator(evaluationData[1])) {
+        restoreFirstDigit();
+        return;
+    }
+
     let result = operate(evaluationData[0], evaluationData[1], evaluationData[2]);
     if (result === undefined) {
         alert("Can't divide by 0!")
-        displayPara.textContent = displayPara.textContent.split(" ")[0];
-        operatorActive = false;
+        restoreFirstDigit();
         return;
     }
     evaluationData.splice(0, 3, result);

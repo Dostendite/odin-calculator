@@ -48,7 +48,7 @@ function evaluate() {
     let result = operate(evaluationData[0], evaluationData[1], evaluationData[2]);
     if (result === undefined) {
         alert("Can't divide by 0!")
-        displayPara.textContent = displayPara.textContent.slice(0, 1);
+        displayPara.textContent = displayPara.textContent.split(" ")[0];
         operatorActive = false;
         return;
     }

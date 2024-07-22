@@ -44,6 +44,7 @@ function calculate(displayArray) {
     let result = 0;
     while (displayArray.length > 1) {
         result = operate(displayArray[0], displayArray[1], displayArray[2]);
+        if (result === "divby0error") return;
         displayArray.splice(0, 3, result);
     }
 
@@ -81,7 +82,7 @@ function operate(operandOne, operator, operandTwo) {
         case "÷":
             if (+operandOne === 0 || +operandTwo === 0) {
                 alert("Can't divide by 0!")
-                return;
+                return "divby0error";
             }
             result = divide(+operandOne, +operandTwo);
     }

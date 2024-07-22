@@ -40,12 +40,8 @@ operatorButtons.forEach((button) => {
     });
 });
 
-// ~~~~~~~~ FUNCTIONS ~~~~~~~~
-
 function calculate(displayArray) {
-
     let result = 0;
-
     while (displayArray.length > 1) {
         result = operate(displayArray[0], displayArray[1], displayArray[2]);
         displayArray.splice(0, 3, result);
@@ -71,9 +67,7 @@ function divide(dividend, divisor) {
 }
 
 function operate(operandOne, operator, operandTwo) {
-
     let result = 0;
-
     switch (operator) {
         case "+":
             result = add(+operandOne, +operandTwo);
@@ -85,11 +79,10 @@ function operate(operandOne, operator, operandTwo) {
             result = multiply(+operandOne, +operandTwo);
             break;
         case "÷":
-
             if (+operandOne === 0 || +operandTwo === 0) {
-                return "DON'T";
+                alert("Can't divide by 0!")
+                return;
             }
-            
             result = divide(+operandOne, +operandTwo);
     }
 

@@ -29,7 +29,6 @@ operatorButtons.forEach((button) => {
 
         if (operatorActive === true) {
             let displayArray = displayPara.textContent.split(" ");
-            displayArray.concat(displayPara.textContent);
             displayPara.textContent = calculate(displayArray);
             displayPara.textContent += button.textContent;
             operatorActive === true

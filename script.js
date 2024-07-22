@@ -1,54 +1,60 @@
-
 const displayPara = document.querySelector("#display-para");
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button")
 const clearButton = document.querySelector("#button-clear");
 const equalsButton = document.querySelector("#button-equals");
 
+let operators = ["+", "", "×", "÷"];
 let operatorActive = false;
 
-clearButton.addEventListener(("click") , (e) => {
-    displayPara.textContent = "";
-    operatorActive = false;
-});
-
-equalsButton.addEventListener(("click"), (e) => {;
-    let displayArray = displayPara.textContent.split(" ");
-    displayPara.textContent = calculate(displayArray);
-    operatorActive = false;
-});
+clearButton.addEventListener("click", clear);
+equalsButton.addEventListener("click", evaluate);
 
 numberButtons.forEach((button) => {
-    button.addEventListener(("click"), (e) => {
-        displayPara.textContent += button.textContent;
-    });
+    button.addEventListener(("click"), () => addNumber(button.textContent));
 });
 
 operatorButtons.forEach((button) => {
-    button.addEventListener(("click"), (e) => {
-
-        if (operatorActive === true) {
-            let displayArray = displayPara.textContent.split(" ");
-            displayPara.textContent = calculate(displayArray);
-            displayPara.textContent += button.textContent;
-            operatorActive === true
-        } else {
-            displayPara.textContent += button.textContent;
-            operatorActive = true;
-
-        }
-    });
+    button.addEventListener(("click"), () => addOperator(button.textContent));
 });
 
-function calculate(displayArray) {
-    let result = 0;
-    while (displayArray.length > 1) {
-        result = operate(displayArray[0], displayArray[1], displayArray[2]);
-        if (result === "divby0error") return;
-        displayArray.splice(0, 3, result);
-    }
+function clear() {
+    displayPara.textContent = "";
+    operatorActive = false;
+}
 
-    return displayArray;
+function addNumber(number) {
+    // concatenates to the current number without any empty spaces
+    displayPara.textContent += number;
+}
+
+function addOperator(operator) {
+    if (operatorActive === true) {
+        evaluate();
+        displayPara.textContent += operator;
+        operatorActive = true;
+    } else {
+        displayPara.textContent += operator;
+        operatorActive = true;
+    }
+}
+
+function isOperator(symbol) {
+    return operators.includes(symbol.trim());
+}
+
+function evaluate() {
+    let evaluationData = displayPara.textContent.split(" ");
+    let result = operate(evaluationData[0], evaluationData[1], evaluationData[2]);
+    if (result === undefined) {
+        alert("Can't divide by 0!")
+        displayPara.textContent = displayPara.textContent.slice(0, 1);
+        operatorActive = false;
+        return;
+    }
+    evaluationData.splice(0, 3, result);
+    displayPara.textContent = result;
+    operatorActive = false;
 }
 
 function add(addendOne, addendTwo) {
@@ -81,8 +87,7 @@ function operate(operandOne, operator, operandTwo) {
             break;
         case "÷":
             if (+operandOne === 0 || +operandTwo === 0) {
-                alert("Can't divide by 0!")
-                return "divby0error";
+                return;
             }
             result = divide(+operandOne, +operandTwo);
     }

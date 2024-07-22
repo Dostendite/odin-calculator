@@ -51,6 +51,7 @@ function restoreFirstDigit() {
 }
 
 function evaluate() {
+    if (!operatorActive) return;
     let evaluationData = displayPara.textContent.split(" ");
     if (evaluationData.length > 3 && isOperator(evaluationData[1])) {
         restoreFirstDigit();

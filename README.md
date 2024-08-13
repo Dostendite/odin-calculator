@@ -2,7 +2,7 @@
 
 ***Finally!***, now I can make numbers go BRRRR!
 
-👾 [**Live preview**](https://dostendite.github.io/odin-calculator/)
+🔰 [**Live preview**](https://dostendite.github.io/odin-calculator/)
 
 **Possible improvements:**
 - Add decimal & backspace point buttons

@@ -1,4 +1,4 @@
-# Odin Calculator
+# Calculator for TOP
 
 ***Finally!***, now I can make numbers go BRRRR!
 

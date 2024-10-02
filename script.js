@@ -4,7 +4,7 @@ const operatorButtons = document.querySelectorAll(".operator-button")
 const clearButton = document.querySelector("#button-clear");
 const equalsButton = document.querySelector("#button-equals");
 
-let operators = ["+", "", "×", "÷"];
+let operators = ["+", "−", "×", "÷"];
 let operatorActive = false;
 
 clearButton.addEventListener("click", clear);
